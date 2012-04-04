@@ -523,7 +523,11 @@ class GMWFreeBlueTemplate extends QuickTemplate {
             if ( version_compare($wgVersion, '1.18.0', '<') ) {
                 return $this->skin->tooltipAndAccesskey($name);
             }else{
-                return implode(' ', Linker::tooltipAndAccesskeyAttribs($name));
+                $retrunString = ' ';
+                foreach(Linker::tooltipAndAccesskeyAttribs($name) as $key => $item){
+                    $retrunString += $key + '="' + $item +'" ';
+                }
+                return $retrunString;
             }	
         }
 
