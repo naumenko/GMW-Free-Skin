@@ -86,7 +86,7 @@ class GMWFreeBlueTemplate extends QuickTemplate {
 			<?php 			foreach($this->data['personal_urls'] as $key => $item) { ?>
 								<li id="<?php echo Sanitizer::escapeId( "pt-$key" ) ?>"<?php
 										if ($item['active']) { ?> class="active"<?php } ?>><a href="<?php
-								echo htmlspecialchars($item['href']) ?>"<?php echo $skin->tooltipAndAccesskey('pt-'.$key) ?><?php
+								echo htmlspecialchars($item['href']) ?>"<?php echo $this->tooltipAndAccesskey('pt-'.$key) ?><?php
 								if(!empty($item['class'])) { ?> class="<?php
 								echo htmlspecialchars($item['class']) ?>"<?php } ?>><?php
 								echo htmlspecialchars($item['text']) ?></a></li>
@@ -107,7 +107,7 @@ class GMWFreeBlueTemplate extends QuickTemplate {
                             <div class="portlet logo" id="p-logo">
                                     <a style="background-image: url(<?php  echo $wgScriptPath."/skins/gmwfreeblue/images/logo.png" ?>);" <?php
                                             ?>href="<?php echo htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>"<?php
-                                            echo $skin->tooltipAndAccesskey('p-logo') ?>></a>
+                                            echo $this->tooltipAndAccesskey('p-logo') ?>></a>
                             </div>
                             <script type="<?php $this->text('jsmimetype') ?>"> if (window.isMSIE55) fixalpha(); </script>
 				<!--div class="logo"></div-->
@@ -227,7 +227,7 @@ class GMWFreeBlueTemplate extends QuickTemplate {
 							&& in_array( $key, array( 'edit', 'watch', 'unwatch' ))) {
 								echo $skin->tooltip( "ca-$key" );
 							} else {
-								echo $skin->tooltipAndAccesskey( "ca-$key" );
+								echo $this->tooltipAndAccesskey( "ca-$key" );
 							}
 							echo '>'.htmlspecialchars($tab['text']).'</a></li>';
 						} ?>
@@ -518,7 +518,7 @@ class GMWFreeBlueTemplate extends QuickTemplate {
 	<div class="clear"></div>
 <?php
 	}
-	function  tooltipAndAccesskey($name){
+	function tooltipAndAccesskey($name){
             global $wgVersion;
             if ( version_compare($wgVersion, '1.18.0', '<') ) {
                 return $this->skin->tooltipAndAccesskey($name);
