@@ -155,7 +155,7 @@ class GMWFreeGreenTemplate extends QuickTemplate {
 <div id="globalWrapper" >
 	<div class="contentTopBgr"></div>
 	<div class="container_16">
-		<div id="column-content" class="grid_12">
+		<div id="column-content" class="grid_12 push_4">
 			<div id="content" <?php $this->html("specialpageattributes") ?>>
 				<a id="top"></a>
 				<?php if($this->data['sitenotice']) { ?><div id="siteNotice"><?php $this->html('sitenotice') ?></div><?php } ?>
@@ -204,7 +204,7 @@ class GMWFreeGreenTemplate extends QuickTemplate {
 				</div>
 			</div>
 		</div>
-		<div id="column-one"<?php $this->html('userlangattributes')  ?> class="grid_4 omega">
+		<div id="column-one"<?php $this->html('userlangattributes')  ?> class="grid_4 pull_12">
                     <?php if (!$wgUser->isAnon()){?>
 			<div id="p-cactions" class="portlet">
 				<h5><?php $this->msg('views') ?></h5>
