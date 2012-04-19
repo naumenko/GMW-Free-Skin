@@ -64,7 +64,7 @@ class GMWFreeRedTemplate extends QuickTemplate {
 	 * @access private
 	 */
 	function execute() {
-		global $wgRequest,$wgLogo,$wgScriptPath, $wgUser;
+		global $wgRequest,$wgLogo,$wgScriptPath, $wgUser, $gmwAlwaysShowActionsMenu;
 
 		$this->skin = $skin = $this->data['skin'];
 		$action = $wgRequest->getText( 'action' );
@@ -205,7 +205,7 @@ class GMWFreeRedTemplate extends QuickTemplate {
 			</div>
 		</div>
 		<div id="column-one"<?php $this->html('userlangattributes')  ?> class="grid_4 omega">
-                    <?php if (!$wgUser->isAnon()){?>
+                    <?php if (true === $gmwAlwaysShowActionsMenu || !$wgUser->isAnon()){?>
 			<div id="p-cactions" class="portlet">
 				<h5><?php $this->msg('views') ?></h5>
 				<div class="pBody">
