@@ -63,13 +63,12 @@ table {
 /*****************************************/
 body {
 	font-family: Georgia;
-	font-size: 12px;
+	font-size: 16px;
 	color: #757575;
 }
 p {
 	margin: .4em 0 .5em 0;
 	line-height: 1.5em;
-        font-size:130%;
 }
 pre {
 	padding: 0.5em;
@@ -118,11 +117,10 @@ div.headerRight {
 	background-position: left top;
 }
 /*lists*/
-#bodyContent ul {
+#bodyContent ul, #bodyContent ol {
 	list-style: disc;
 	margin: 0 0 0 30px;
 	line-height: 1.5em;
-        font-size:130%;
 }
 /* top user menu */
 div.topUserMenu {
@@ -873,7 +871,7 @@ div#column-one h5 {
 }
 div#column-one ul {
 	display: block;
-	width: 220px;
+	width: 100%;
 	background-image: url(images/side/top-bgr.png);
 	background-repeat: no-repeat;
 	padding-top: 18px;
@@ -881,7 +879,6 @@ div#column-one ul {
 }
 div#column-one ul li a {
 	display: block;
-	width: 220px;
 	height: 22px;
 	background-image: url(images/side/a-bgr.png);
 	background-repeat: no-repeat;
@@ -889,6 +886,7 @@ div#column-one ul li a {
 	color: #595959;
 	text-decoration: none;
 	padding: 8px 6px 0 12px;
+        font-size:12px;
 }
 div#column-one ul li a:hover {
 	background-image: url(images/side/a-bgr-h.png);
