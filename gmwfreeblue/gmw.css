@@ -1039,6 +1039,7 @@ div#footerLogo a {
 	background-position: 0 0px;
 	color: #777777;
 	text-decoration: none;
+        font-size: 12px;      
 }
 div#footerLogo a:hover {
 	color: #0087D5;
