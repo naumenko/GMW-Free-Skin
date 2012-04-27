@@ -64,7 +64,8 @@ class GMWFreeRedTemplate extends QuickTemplate {
 	 * @access private
 	 */
 	function execute() {
-		global $wgRequest,$wgLogo,$wgScriptPath, $wgUser, $gmwAlwaysShowActionsMenu;
+		global $wgRequest,$wgLogo,$wgScriptPath, $wgUser
+                        , $gmwAlwaysShowActionsMenu, $gmwSidebarFirst;
 
 		$this->skin = $skin = $this->data['skin'];
 		$action = $wgRequest->getText( 'action' );
@@ -155,7 +156,7 @@ class GMWFreeRedTemplate extends QuickTemplate {
 <div id="globalWrapper" >
 	<div class="contentTopBgr"></div>
 	<div class="container_16">
-		<div id="column-content" class="grid_12">
+		<div id="column-content" class="grid_12 <?php if ($gmwSidebarFirst === true) echo "push_4" ?>">
 			<div id="content" <?php $this->html("specialpageattributes") ?>>
 				<a id="top"></a>
 				<?php if($this->data['sitenotice']) { ?><div id="siteNotice"><?php $this->html('sitenotice') ?></div><?php } ?>
@@ -204,7 +205,7 @@ class GMWFreeRedTemplate extends QuickTemplate {
 				</div>
 			</div>
 		</div>
-		<div id="column-one"<?php $this->html('userlangattributes')  ?> class="grid_4 omega">
+		<div id="column-one"<?php $this->html('userlangattributes')  ?> class="grid_4 <?php if($gmwSidebarFirst === true) echo "pull_12"; else echo "omega"; ?>">
                     <?php if (true === $gmwAlwaysShowActionsMenu || !$wgUser->isAnon()){?>
 			<div id="p-cactions" class="portlet">
 				<h5><?php $this->msg('views') ?></h5>
