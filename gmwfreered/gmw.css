@@ -1111,6 +1111,11 @@ h6 span.mw-headline{
 	font-family: Arial, Helvetica, sans-serif;
 	color: #b1c914;
 	font-weight: normal;
+        line-height: 1em;
+}
+#bodyContent h1,#bodyContent h2,#bodyContent h3,#bodyContent h4,
+#bodyContent h5,#bodyContent h6{
+    margin-top:0.5em;
 }
 h1 span.mw-headline{
 	font-size: 250%;
